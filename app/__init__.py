@@ -1,7 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
+bootstrap = Bootstrap()
 
 
 def create_app():
@@ -12,6 +14,7 @@ def create_app():
 
 
     db.init_app(app)
+    bootstrap.init_app(app)
 
     from app import routes
     routes.init_app(app)
